@@ -8,8 +8,8 @@ import org.junit.Test;
 /**
  * The test class CalculadoraTest.
  *
- * @author  David Cabanillas Loro
- * @version 22/02/2018
+ * @author  (your name)
+ * @version (a version number or a date)
  */
 public class CalculadoraTest
 {
