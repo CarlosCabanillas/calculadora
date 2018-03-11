@@ -1,12 +1,12 @@
-
+package calculadora;
 /**
  * Write a description of class Calculadora here.
  * 
- * @author (your name) 
+ * @author Cabanillas 
  * @version (a version number or a date)
  */
 import java.math.*;
-
+import java.util.Scanner;
 
 public class Calculadora
 {
@@ -14,17 +14,17 @@ public class Calculadora
     private int num1;
     private int num2;
     private double rdo;
-    private Operacion op;
-
+   // private Operacion op;
+    final Scanner TECLADO=new Scanner(System.in);
     /**
      * Constructor for objects of class Calculadora
      */
-    public Calculadora()
+    public Calculadora(int num ,int num2)
     {
         // initialise instance variables
-        num1 = 0;
-        num2 = 0;
-        op=op.SUMA;
+        this.num1 = num;
+        this.num2 = num2;
+        //op=op.SUMA;
         
     }
     
@@ -42,35 +42,43 @@ public class Calculadora
 
     public void opera()
     {
+        
+        System.out.println("Introduzca un numero por operacion:n1:Suma\2:resta\n3:Multipplicar\n4:Dividir\n5:Potencia\n6:Raiz\n7:Logaritmo\n8:Factorial");
+        int op;
+        op=TECLADO.nextInt();
         switch(op){
-            case SUMA:
+            case 1:
                 rdo=num1+num2;
                 break;
-            case RESTA:
+            case 2:
                 rdo=num1-num2;
                 break;
-            case MULTIPLICA:
+            case 3:
                 rdo=num1*num2;
                 break;
-            case DIVIDE:
+            case 4:
                 rdo=num1/num2;
                 break;
-            case POTENCIA:
+            case 5:
                 rdo=num1^num2;
                 break;
-            case RAIZ:
+            case 6:
                 rdo=Math.sqrt(num1);
                 break;
-            case LOGARITMO:
+            case 7:
                 rdo=Math.log10(num1);
                 break;
-            case FACTORIAL:
+            case 8:
                 rdo=factorial(num1);
                 break;
+            case 9:
+            	rdo=matriz(num1);
+            	break;
+            
              
         }
     }
-    public void ponOperacion(String opera){
+     public void ponOperacion(String opera){
         switch(opera){
         
         case "SUMA":
@@ -87,18 +95,16 @@ public class Calculadora
             break;
         case "POTENCIA":
             op=op.POTENCIA;
-            break;
         case "RAIZ":
             op=op.RAIZ;
-            break;
         case "LOGARITMO":
             op=op.LOGARITMO;
-            break;
         case "FACTORIAL":
             op=op.FACTORIAL;
-            break;
+        case "MATRIZ":
+        	op=op.MATRIZ;
         }
-    }
+    }*/
     public double dameResultado()
     {
         // put your code here
@@ -125,5 +131,22 @@ public class Calculadora
         return sol;
     }
     
-   
+    //Matrices
+    public int[][] CrearMatriz(int x,int y){
+        int numero;
+        int [][] matriz=new int [x][y] ;
+            for (int i=0;i<y;i++)
+                for (int j=0;j<x;j++){
+                    numero =TECLADO.nextInt();
+                    matriz[i][j]=numero;
+                            }
+        
+        return matriz;
+        
+    }
+    
+    public double Logaritmo(int base,double num){
+        return (Math.log(num)/Math.log(base));
+    }
+    
 }
