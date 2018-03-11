@@ -1,4 +1,4 @@
-package calculadora;
+ 
 /**
  * Write a description of class Calculadora here.
  * 
@@ -71,13 +71,11 @@ public class Calculadora
             case 8:
                 rdo=factorial(num1);
                 break;
-            case 9:
-            	rdo=matriz(num1);
-            	break;
+            
             
              
         }
-    }
+    */}
      public void ponOperacion(String opera){
         switch(opera){
         
@@ -103,8 +101,8 @@ public class Calculadora
             op=op.FACTORIAL;
         case "MATRIZ":
         	op=op.MATRIZ;
-        }
-    }*/
+        }/*
+    }
     public double dameResultado()
     {
         // put your code here

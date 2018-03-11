@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calculadora;
+ 
 import Calculadora.*;
 import java.util.Scanner;
 /**
  *
  * @author Cabanillas
  */
-public class main {
+public class main extends Calculadora {
     final static Scanner TECLADO=new Scanner(System.in);
     
     public static void main(String []args){
