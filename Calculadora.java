@@ -5,7 +5,6 @@
  * @author Cabanillas 
  * @version (a version number or a date)
  */
-import java.util.Scanner;
 
 public class Calculadora
 {
@@ -15,8 +14,6 @@ public class Calculadora
     private double rdo;
 
     private Operacion op;
-    final Scanner TECLADO=new Scanner(System.in);
-
     
     public void ponNum1(double n1)
     {
@@ -57,8 +54,12 @@ public class Calculadora
             case FACTORIAL:
                 rdo=factorial(num1);
                 break;
+
         }
     }
+
+
+
 
     /**
      * @param opera
@@ -91,9 +92,6 @@ public class Calculadora
         case "FACTORIAL":
             op=op.FACTORIAL;
             break;
-        case "MATRIZ":
-        	op=op.MATRIZ;
-        	break;
         default:
             throw new IllegalArgumentException("Esa operacion no existe");
         }
@@ -105,30 +103,16 @@ public class Calculadora
     }
 
     //Metodo para calcular el factorial de un numero
-    public static int factorial(double n) {
-        int sol = 1;
-        for (int i = 1; i <= n; i++) {
-            sol = sol * i;
-        }
-        return sol;
+    public double factorial (double numero) {
+        if (numero == 0)
+            return 1;
+        else
+            return numero * factorial(numero-1);
     }
-    
-    //Matrices
-    public int[][] CrearMatriz(int x,int y){
-        int numero;
-        int [][] matriz=new int [x][y] ;
-            for (int i=0;i<y;i++)
-                for (int j=0;j<x;j++){
-                    numero =TECLADO.nextInt();
-                    matriz[i][j]=numero;
-                            }
-        
-        return matriz;
-        
-    }
-    
+
+
     public double Logaritmo(double base,double num){
         return (Math.log(num)/Math.log(base));
     }
-    
+
 }
